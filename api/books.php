@@ -1,12 +1,6 @@
 <?php
-$kolory = array ( 'niebieski' => 'blue',
-'czerwony' => 'red',
-'bialy' => 'white',
-'zielony' => 'green'
 
-);
+require 'src/book.php';
 
-echo (json_encode($kolory));
 
 ?>
-
