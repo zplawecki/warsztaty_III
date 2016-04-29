@@ -6,14 +6,6 @@ if ($conn->connect_error) {
     die('Komunikat bledu: ' . $conn->connect_error);
 }
 
-$kolory = array('niebieski' => 'blue',
-    'czerwony' => 'red',
-    'bialy' => 'white',
-    'zielony' => 'green'
-);
-
-echo (json_encode($kolory));
-
 class Book {
 
     private $name;
@@ -36,10 +28,14 @@ class Book {
         $result = $conn->query($sql);
         if (count($result->num_rows) !== 1) {
             return false;
-        };
-        $this->name = $result[0]['name'];
-        $this->author = $result[0]['author'];
-        $this->description = $result[0]['desription'];
+        }
+        $linia = $result->fetch_assoc();
+        $this->id = $id;
+        $this->name = $linia['name'];
+        $this->author = $linia['author'];
+        $this->description = $linia['desription'];
+        
+        return $this;
     }
 
     public function create(&$conn, $name, $author, $description) {
@@ -69,12 +65,25 @@ class Book {
         $this->author = 'author';
         $this->description = 'description';
     }
+
     public function deleteFromDB($conn) {
-        if ($this->id < 1) {
+        if ($this->id == 1) {
             return false;
         }
         $sql = "DELETE FROM books WHERE id=$this->id";
         $result = $conn->query($sql);
+    }
+    public function getBook() {
+        if ($this->id == 1) {
+            return false;
+        
+}
+    return array(
+        'id' => $this->id,
+        'name' => $this->name,
+        'author' => $this->author,
+        'description' => $this->description
+    );
     }
 }
 ?>
