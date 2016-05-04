@@ -1,6 +1,6 @@
 <?php
 
-$conn = new mysqli('localhost', 'root', '', 'exercises_db');
+$conn = new mysqli('localhost', 'root', '', 'warsztaty_iii');
 
 if ($conn->connect_error) {
     die('Komunikat bledu: ' . $conn->connect_error);
