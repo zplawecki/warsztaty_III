@@ -34,7 +34,7 @@ class Book {
         $this->name = $linia['name'];
         $this->author = $linia['author'];
         $this->description = $linia['desription'];
-        
+
         return $this;
     }
 
@@ -52,7 +52,7 @@ class Book {
         $this->description = 'description';
     }
 
-    public function update(&$conn, $name, $author, $description) {
+    public function update(&$conn, $name, $author, $description, $id) {
         if ($this->id < 1) {
             return false;
         }
@@ -73,21 +73,20 @@ class Book {
         $sql = "DELETE FROM books WHERE id=$this->id";
         $result = $conn->query($sql);
     }
+
     public function getBook() {
         if ($this->id == 1) {
             return false;
-        
-}
-    return array(
-        'id' => $this->id,
-        'name' => $this->name,
-        'author' => $this->author,
-        'description' => $this->description
-    );
+        }
+        return array(
+            'id' => $this->id,
+            'name' => $this->name,
+            'author' => $this->author,
+            'description' => $this->description
+        );
     }
+
 }
-
-
 ?>
 
 
