@@ -1,4 +1,14 @@
-$.ajax('api/books.php', {dataType: "json", success: function (dane) {
-        console.log(dane.niebieski);
+$(function () {
 
-    }});
+    $.ajax({
+        dataType: "json",
+        url: 'api/books.php',
+        success: function (data) {
+            $.each(data, function (i, book) {
+
+            });
+        }
+    });
+});
+
+   
