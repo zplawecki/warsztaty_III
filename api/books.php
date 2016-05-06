@@ -97,7 +97,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 //- Każdy przycisk ma mieć dodany event z następującą funkcją:
 //- Pobierz szczegółowe dane o książce przez GET /api/books.php?id=XYZ
 //- Skąd wziąć XYZ? Przy zadaniu 1. możemy gdzieś dodać ukryty element lub data id na czymś, żeby kazdy element miał zapisany jakiego id dotyczy
-//- W callbacku na success dostajemy data, który jest informacjami o książce, w tym momencie go wyświetlamy (np. append(), after(), html()). Wyświetlamy też formularz do edycji. Pamiętamy, żeby formularz nie miał pól z ID! Tylko z klasą! Bo jak otworzymy npo. 3 książki to byśmy mieli 3 razy to samo ID.
+//- W callbacku na success dostajemy data, który jest informacjami o książce, w tym momencie go wyświetlamy (np. append(), after(), html()). Wyświetlamy też formularz do edycji. Pamiętamy, żeby formularz nie miał pól z ID! Tylko z klasą! Bo jak otworzymy np. 3 książki to byśmy mieli 3 razy to samo ID.
 //- Taki formularz ma mieć przycisk, do którego podpięty jest event
 //- Event zczytuje dane z AKTUALNEGO formularza, zapisuje do zmiennych
 //- Wysyła zmienne + ID książki na adres PUT /api/books.php
