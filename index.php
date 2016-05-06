@@ -13,12 +13,12 @@
             <label>Autor</label><br>
             <input type="text" id="author" name="author"><br>
             <label>Opis</label><br>
-            <textarea id="descr" name="descr"></textarea>
-            
+            <textarea id="descr" name="descr"></textarea><br>
+            <input type="submit" value="Wyslij">
             
         </form><br><br>
-        <div>
-            <label>Info o ksiazce</label>
+        <div id="bookInfo">
+            <label>Info o ksiazce:</label>
             
             
         </div>
