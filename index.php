@@ -9,7 +9,7 @@
     <body>
         <form id="addBook">
             <label>Tytul</label><br>
-            <input type="text" id="title" name="title"><br>
+            <input type="text" id="name" name="name"><br>
             <label>Autor</label><br>
             <input type="text" id="author" name="author"><br>
             <label>Opis</label><br>
