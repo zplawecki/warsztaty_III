@@ -1,6 +1,6 @@
 $(function () {
-    $('#show').on('click', function () {
-
+    $('#show').on('click', function (event) {
+        event.preventDefault();
         $.ajax({
             type: 'GET',
             url: 'api/books.php',
@@ -14,8 +14,8 @@ $(function () {
             }
         });
     });
-    $('#send').on('click', function () {
-
+    $('#send').on('click', function (event) {
+        event.preventDefault();
         var Book = {
             name: $('#name').val(),
             author: $('#author').val(),
