@@ -29,7 +29,7 @@
                 var $tytul = //zmienna przechowujaca tytul ksiazki
                         $tytul.on('click', function () {
                             //rozwin div
-$('#bookInfo').slideDown(300, );
+                            $('#bookInfo').slideDown(300, );
                             //wyslij ajax
                             $.ajax({
                                 dataType: "json",
@@ -41,7 +41,20 @@ $('#bookInfo').slideDown(300, );
                                 }
                             });
                         });
+                var $delete = //przycisk do usuwania ksiazek
+                        $delete.on('click', function () {
+                            $.ajax({
+                                dataType: "json",
+                                url: 'api/books.php?id=1',
+                                success: function (data) {
+                                    $.each(data, function (i, book) {
 
+                                    });
+                                }
+                            });
+
+
+                        });
 
 
             });
