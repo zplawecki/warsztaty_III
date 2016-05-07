@@ -14,54 +14,17 @@
             <input type="text" id="author" name="author"><br>
             <label>Opis</label><br>
             <textarea id="descr" name="descr"></textarea><br>
-            <input type="submit" value="Wyslij">
+            <input id="send" type="submit" value="Wyslij">
 
         </form><br><br>
         <div id="bookInfo">
             <label>Info o ksiazce:</label>
-
+            <p id="pBookInfo"></p>
 
         </div>
 
 
-        <script>
-            $(function () {
-                var $tytul = //zmienna przechowujaca tytul ksiazki
-                        $tytul.on('click', function () {
-                            //rozwin div
-                            $('#bookInfo').slideDown(300, );
-                            //wyslij ajax
-                            $.ajax({
-                                dataType: "json",
-                                url: 'api/books.php?id=1',
-                                success: function (data) {
-                                    $.each(data, function (i, book) {
-
-                                    });
-                                }
-                            });
-                        });
-                var $delete = //przycisk do usuwania ksiazek
-                        $delete.on('click', function () {
-                            $.ajax({
-                                dataType: "json",
-                                url: 'api/books.php?id=1',
-                                success: function (data) {
-                                    $.each(data, function (i, book) {
-
-                                    });
-                                }
-                            });
-
-
-                        });
-
-
-            });
-
-
-
-        </script>
+  
 
     </body>
 </html>
