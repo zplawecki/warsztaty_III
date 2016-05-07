@@ -24,7 +24,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
 
         break;
-    case $PUT: //aktualizacja jednego elementu
+    case $_PUT: //aktualizacja jednego elementu
         $id = $_GET['id'];
         //pobranie danych
         parse_str(file_get_contents('php://input'), $put_vars); //tworzymy pseudoplik z danymi, ktore chcemy pobrac (id, name, itp.), odczytujemy jego zawartosc i tworzymy z niej tablice, $put_vars odtad przechowuje dzieki temu wszystkie przeslane wartosci
@@ -41,7 +41,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
         break;
 
-    case $DELETE:
+    case $_DELETE:
         //usuniecie jednego elementu, np. z linka z  id DELETE books.php?id=3
         $id = $_GET['id'];
         $book = Book();
