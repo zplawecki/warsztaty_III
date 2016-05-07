@@ -2,8 +2,8 @@
 require './src/book.php';
 
 switch ($_SERVER['REQUEST_METHOD']) {
-    case $GET:
-        if ($GET < 1) { //pokaz wszystkie ksiazki
+    case $_GET:
+        if ($_GET < 1) { //pokaz wszystkie ksiazki
             $sql = ("SELECT id FROM books");
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
@@ -16,7 +16,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         }
         break;
 
-    case $POST: //utworzenie jednego elementu
+    case $_POST: //utworzenie jednego elementu
         $book = new Book ();
         $result = $book->create($conn, '', '', '');
         $answer = ['status' => !!$result]; //zaprzeczenie zaprzeczenia
@@ -56,7 +56,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 <script>
     var name = $('#name').val();
     var author = $('#author').val();
-    var description = $('#description').val();
+    var description = $('#descr').val();
     var id = $('#id').val();
     
     $.ajax({
