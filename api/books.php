@@ -58,55 +58,22 @@ switch ($_SERVER['REQUEST_METHOD']) {
     var author = $('#author').val();
     var description = $('#descr').val();
     var id = $('#id').val();
-    
     $.ajax({
-        //jakiestam opcje...
-        data:{
-            "id": $id;
-            "name": $name;
-            "author": $author;
-            "description": $description;
-        };
-        success:function(data){
-            var id = data.id;
-            var name = data.name;
-            var author = data.author;
-            var desc = data.desc;
-        }
+    //jakiestam opcje...
+    data:{
+    "id": $id;
+    "name": $name;
+    "author": $author;
+    "description": $description;
+    };
+    success:function(data){
+    var id = data.id;
+    var name = data.name;
+    var author = data.author;
+    var desc = data.desc;
+    }
     }
 
-//1. Lista wszystkich.
-//
-//- Wysłanie po DOMContentLoaded AJAX-a do adresu GET /api/books.php
-//- W callback-u success mamy jako parametr wszystkie książki
-//- Iterujemy po nich pętlą i dodajemy elementy HTML na stronę (np. append(), after(), html(), do wyboru)
-//
-//
-//2. Formularz do tworzenia nowych.
-//
-//- Na górze strony ma być formularz do tworzenia
-//- Dodajemy w DOMConentLoaded event na przycisk wysyłający
-//- Przycisk po kliknięciu ma zablokować domyślne działanie i wykonać kod:
-//- Pobieramy wartości z formularza (za pomocą val()) i zapisujemy do zmiennych
-//- Wywołujemy AJAX na POST /api/books.php
-//
-//
-//3. Rozwinięcie informacji o wybranej książce + formularz do jej edycji.
-//
-//- Dodać jakiś przycisk "dodaj więcej" do kazdego elementu dodanego w punkcie 1.
-//- Każdy przycisk ma mieć dodany event z następującą funkcją:
-//- Pobierz szczegółowe dane o książce przez GET /api/books.php?id=XYZ
-//- Skąd wziąć XYZ? Przy zadaniu 1. możemy gdzieś dodać ukryty element lub data id na czymś, żeby kazdy element miał zapisany jakiego id dotyczy
-//- W callbacku na success dostajemy data, który jest informacjami o książce, w tym momencie go wyświetlamy (np. append(), after(), html()). Wyświetlamy też formularz do edycji. Pamiętamy, żeby formularz nie miał pól z ID! Tylko z klasą! Bo jak otworzymy np. 3 książki to byśmy mieli 3 razy to samo ID.
-//- Taki formularz ma mieć przycisk, do którego podpięty jest event
-//- Event zczytuje dane z AKTUALNEGO formularza, zapisuje do zmiennych
-//- Wysyła zmienne + ID książki na adres PUT /api/books.php
-//
-//
-//4. Przycisk do usuwania.
-//
-//- Znowu modyfikujemy punkt 1.
-//- Modyfikacja delikatna: dodajemy przycisk
-//- Na przycisku event na DELETE /api/books.php?id=XYZ
+
 
 </script>

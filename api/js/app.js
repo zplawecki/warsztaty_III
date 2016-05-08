@@ -42,44 +42,44 @@ $(function () {
 //        }
 //    });
 
-    $('#ksiazki').delegate('.editBook', 'click', function(){
+    $('#ksiazki').delegate('.editBook', 'click', function () {
         event.preventDefault();
         var $li = $(this).closest('li');
-        $li.find('input.name').val( $li.find('span.name').html() );
-        $li.find('input.author').val( $li.find('span.author').html() );
-        $li.find('input.descr').val( $li.find('span.descr').html() );
+        $li.find('input.name').val($li.find('span.name').html());
+        $li.find('input.author').val($li.find('span.author').html());
+        $li.find('input.descr').val($li.find('span.descr').html());
         $li.addClass('edit');
     });
-    $('#ksiazki').delegate('.cancelEdit', 'click', function(){
+    $('#ksiazki').delegate('.cancelEdit', 'click', function () {
         event.preventDefault();
         $(this).closest('li').removeClass('edit');
     });
-    $('#ksiazki').delegate('.saveEdit', 'click', function(){
+    $('#ksiazki').delegate('.saveEdit', 'click', function () {
         event.preventDefault();
         var $li = $(this).closest('li');
         var book = {
             name: $('#name').val(),
             author: $('#author').val(),
             description: $('#descr').val(),
-            id: $('#id').val() 
-    };
+            id: $('#id').val()
+        };
         $.ajax({
-        type: 'PUT',
-        data: {name: 'ksiazka_1', author: 'autor_nieznany', description: 'opis_2'},
-        url: 'api/books.php' +li.attr('data-id'),
-        data: Book,
-        success: function () {
-            $li.find('span.name').html(book.name);
-            $li.find('span.author').html(book.author);
-            $li.find('span.descr').html(book.descr);
-            $li.removeClass('edit');
-            alert('Aktualizacja ksiazki powiodla sie!');
-        },
-        error: function(){
-         alert('Blad przy aktualizacji ksiazki');   
-        }
+            type: 'PUT',
+            data: {name: 'ksiazka_1', author: 'autor_nieznany', description: 'opis_2'},
+            url: 'api/books.php' + li.attr('data-id'),
+            data: Book,
+                    success: function () {
+                        $li.find('span.name').html(book.name);
+                        $li.find('span.author').html(book.author);
+                        $li.find('span.descr').html(book.descr);
+                        $li.removeClass('edit');
+                        alert('Aktualizacja ksiazki powiodla sie!');
+                    },
+            error: function () {
+                alert('Blad przy aktualizacji ksiazki');
+            }
         });
-        });
+    });
     $('#ksiazki').delegate('.remove', 'click', function () {
         event.preventDefault();
         var $li = $(this).closest('li');
