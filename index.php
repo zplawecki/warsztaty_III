@@ -45,7 +45,3 @@
     </body>
 </html>
 
-
-<?php
-//link: http://localhost/testphp/warsztaty/index.php
-?>
