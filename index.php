@@ -17,9 +17,10 @@
             <input id="send" type="submit" value="Wyslij">
             <input id="show" type="submit" value="Wyswietl wszystkie">
         </form><br><br>
+        <label>Info o ksiazce:</label>
         <div id="bookInfo">
-            <label>Info o ksiazce:</label>
-            <p id="pBookInfo"></p>
+            
+            
 
         </div>
 

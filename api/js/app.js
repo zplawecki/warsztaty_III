@@ -6,7 +6,7 @@ $(function () {
             url: 'api/books.php',
             success: function (books) {
                 $.each(books, function (i, books) {
-                    $books.append('<li>autor: ' + data.author + ', name: ' + data.name + ', opis: ' + data.descr + '</li>');
+                    $('#bookInfo').append('<li>autor: ' + data.author + ', name: ' + data.name + ', opis: ' + data.descr + '<button data-id=' + data.id + ' class="remove">X</button></li>');
                 });
             },
             error: function () {
@@ -49,14 +49,17 @@ $(function () {
             alert('Aktualizacja ksiazki powiodla sie!');
         }
     });
-    $.ajax({
-        type: 'DELETE',
-        url: 'api/books.php',
-        success: function () {
-            alert('Usuniecie ksiazki powiodlo sie!');
-        }
+    $('.remove').on('click', function () {
+        var $li = $(this).closest('li');
+        $.ajax({
+            type: 'DELETE',
+            url: 'api/books.php' + $(this).attr('data-id'),
+            success: function () {
+                $li.remove();
+                alert('Usuniecie ksiazki powiodlo sie!');
+            }
+        });
     });
 });
-
 
    
