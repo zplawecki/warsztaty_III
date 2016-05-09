@@ -5,8 +5,8 @@ $(function () {
             type: 'GET',
             url: 'api/books.php',
             success: function (books) {
-                $.each(books, function (i, books) {
-                    $('#bookInfo').append('<li>autor: ' + data.author + ', name: ' + data.name + ', opis: ' + data.descr + '<button data-id=' + data.id + ' class="remove">X</button></li>');
+                $.each(books, function (i, book) {
+                    $('#bookInfo').append('<li>autor: ' + book.author + ', name: ' + book.name + ', opis: ' + book.descr + '<button data-id=' + book.id + ' class="remove">X</button></li>');
                 });
             },
             error: function () {
