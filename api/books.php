@@ -24,7 +24,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
 
         break;
-    case $_PUT: //aktualizacja jednego elementu
+    case PUT: //aktualizacja jednego elementu
         $id = $_GET['id'];
         //pobranie danych
         parse_str(file_get_contents('php://input'), $put_vars); //tworzymy pseudoplik z danymi, ktore chcemy pobrac (id, name, itp.), odczytujemy jego zawartosc i tworzymy z niej tablice, $put_vars odtad przechowuje dzieki temu wszystkie przeslane wartosci
@@ -53,7 +53,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 }
 ?>
 
-<script>
+<!--<script>
     var name = $('#name').val();
     var author = $('#author').val();
     var description = $('#descr').val();
@@ -76,4 +76,4 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
 
 
-</script>
+</script>-->
