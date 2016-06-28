@@ -1,4 +1,15 @@
 $(function () {
+
+    var pozycje = $('#positions');
+    var btn = $('#btn');
+    var updateSubmit = $('#submit')
+    var author = $('#author');
+    var desc = $('#desc');
+    var title = $('#title');
+
+    var j = 1;
+
+
     $('#show').on('click', function (event) {
         event.preventDefault();
         $.ajax({

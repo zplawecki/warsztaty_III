@@ -52,28 +52,3 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
 }
 ?>
-
-<!--<script>
-    var name = $('#name').val();
-    var author = $('#author').val();
-    var description = $('#descr').val();
-    var id = $('#id').val();
-    $.ajax({
-    //jakiestam opcje...
-    data:{
-    "id": $id;
-    "name": $name;
-    "author": $author;
-    "description": $description;
-    };
-    success:function(data){
-    var id = data.id;
-    var name = data.name;
-    var author = data.author;
-    var desc = data.desc;
-    }
-    }
-
-
-
-</script>-->
