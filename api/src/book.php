@@ -56,12 +56,16 @@ class Book {
         if ($this->id < 1) {
             return false;
         }
+        if (!(is_string($name) && is_string($author) && is_string($description))) {
+            return false;
+        }
+
         $sql = "UPDATE books SET (name=" . addslashes($name) . ", author=" . addslashes($author) . ", description=" . $description . ") WHERE id=$this->id";
 
         $result = $conn->query($sql);
         $this->id = $conn->$insert_id();
 
-        $this->name = 'id';
+        $this->name = 'name';
         $this->author = 'author';
         $this->description = 'description';
     }
@@ -75,7 +79,7 @@ class Book {
     }
 
     public function getBook() {
-        if ($this->id == 1) {
+        if ($this->id == -1) {
             return false;
         }
         return array(
