@@ -1,10 +1,10 @@
 $(function () {
 
-    var pozycje = $('#positions');
+    var positions = $('#positions');
     var btn = $('#btn');
     var updateSubmit = $('#submit')
     var author = $('#author');
-    var desc = $('#desc');
+    var description = $('#description');
     var title = $('#title');
 
     var j = 1;
@@ -12,16 +12,17 @@ $(function () {
 
     $('#show').on('click', function (event) {
         event.preventDefault();
+        
         $.ajax({
             type: 'GET',
             url: 'api/books.php',
             success: function (books) {
                 $.each(books, function (i, book) {
-                    $('#bookInfo').append('<li>autor: ' + book.author + ', name: ' + book.name + ', opis: ' + book.descr + '<button data-id=' + book.id + ' class="remove">X</button></li>');
+                    positions.append('<li>autor: ' + book.author + ', name: ' + book.name + ', opis: ' + book.descr + '<button data-id=' + book.id + ' class="remove">X</button></li>');
                 });
             },
             error: function () {
-                alert('blad wyswietlania ksiazek');
+                alert('Blad wyswietlania ksiazek');
             }
         });
     });
@@ -45,13 +46,6 @@ $(function () {
             }
         });
     });
-//    $.ajax({
-//        type: 'GET',
-//        url: 'api/books.php',
-//        success: function (data) {
-//            alert("Dane ksiazki:", data);
-//        }
-//    });
 
     $('#ksiazki').delegate('.editBook', 'click', function () {
         event.preventDefault();
