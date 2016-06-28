@@ -1,18 +1,8 @@
 $(function () {
 
-    var positions = $('#positions');
-    var btn = $('#btn');
-    var updateSubmit = $('#submit')
-    var author = $('#author');
-    var description = $('#description');
-    var title = $('#title');
-
-    var j = 1;
-
-
     $('#show').on('click', function (event) {
         event.preventDefault();
-        
+
         $.ajax({
             type: 'GET',
             url: 'api/books.php',
