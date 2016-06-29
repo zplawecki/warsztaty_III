@@ -10,11 +10,11 @@
         
         <form>
             Tytu:<br>
-            <input type="text" id="title" placeholder="Wpisz tytuł" name="title"/><br>
+            <input type="text" id="name" placeholder="Wpisz tytuł" name="title"/><br>
             Autor:<br>
             <input type="text" id="author" placeholder="Podaj autora" name="author"/><br>
             Opis:<br>
-            <textarea id="desc" maxlength="255" placeholder="Podaj krótki opis" name="desc"></textarea><br>
+            <textarea id="descr" maxlength="255" placeholder="Podaj krótki opis" name="desc"></textarea><br>
             <input type="submit" id="btn" name="dodaj" value="Dodaj książkę"/>
         </form>
         <h3>Wszystkie książki:</h3>
